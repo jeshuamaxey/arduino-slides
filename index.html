@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Arduino</title>
+
+		<meta name="description" content="An introduction to the Arduino">
+		<meta name="author" content="Jeshua Maxey">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/jeshua.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+
+				<section>
+					<h1>Arduino</h1>
+					<h3>A Brief<br/>Introduction</h3>
+					<p>
+						<small><a href="http://jeshua.co">Josh "Breadboard" Maxey</a> | <a href="http://twitter.com/jeshuamaxey">@jeshuamaxey</a></small>
+					</p>
+					<p>28th March 2013</p>
+				</section>
+
+				<section>
+					<section>
+						<h3>About this presentation</h3>
+						<p>This presentation is an gentle introduction to the wonderful world of Arduino. It accompanies a (hopefully ever expanding) series of tutorials that can be found over on <a href="http://jeshua.co/categories/arduino">my website</a></p>
+						<p>I will try to assume no prior knowledge of electronics or programming, though both will help a great deal when working with the Arduino.</p>
+						<p>One last note, this presentation is a multidimensional. The navigation arrows in the bottom right hand corner indicate whether there is a slide below the one you are currently viewing. Make sure to navigate down through these before flicking right to next next section. Have a go now.</p>
+					</section>
+					<section>
+						<h1>See that wasn't so hard!</h1>
+						<h3>Now scoot right and get learning</h3>
+					</section>
+				</section>
+				
+				<section>
+					<h2>What this presentation covers</h2>
+					<ul>
+						<li>An Introduction to Arduino</li>
+						<li>Some interesting applications</li>
+						<li>How do you use an Arduino</li>
+						<li>My First Circuit</li>
+						<li>Digital Inputs &amp; Outputs</li>
+					</ul>
+				</section>
+
+				<section>				
+					<section>
+						<h2>A What-duino?</h2>
+						<p>
+							According the website:
+						</p>
+						<blockquote cite="http://arduino.cc/">
+							Arduino is an open-source electronics prototyping platform based on flexible, easy-to-use hardware and software.<!-- It's intended for artists, designers, hobbyists, and anyone interested in creating interactive objects or environments.-->
+						</blockquote>
+					</section>
+
+					<section>
+						<h2>And now in English</h2>
+						<p>
+							According to Josh 'Breadboard' Maxey:
+						</p>
+						<blockquote cite="http://jeshua.co/">
+							Uhh...
+						</blockquote>
+					</section>
+					<section>
+						<h2>BLUE!</h2>
+						<img src="http://www.wired.com/images_blogs/beyond_the_beyond/2011/12/arduino_uno_test.jpg" alt="">
+					</section>
+					<section>
+						<h2>Arduinos are...</h2>
+						<h3 class="fragment">Cheap</h3>
+						<h3 class="fragment">Accessible</h3>
+						<h3 class="fragment">Open source</h3>
+						<h3 class="fragment">Expandable</h3>
+						<h3 class="fragment">Fast<br/>(Rapid Prototyping)</h3>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Three cool examples</h2>
+						<ol>
+							<li>The Inebriator</li>
+							<li>The Art-O-Matic</li>
+							<li>A Laser Harp</li>
+						</ol>
+					</section>
+					<section>
+						<style>
+							.youtube-vid {
+								opacity:0;
+								transition:opacity 1s linear;*
+							}
+							section.present iframe {
+								opacity: 1;
+							}
+						</style>
+						<h2>The Inebriator</h2>
+						<iframe class="youtube-vid" width="640" height="480" src="http://www.youtube.com/embed/hJIkJ9x0-JQ?rel=0" frameborder="0" allowfullscreen></iframe>
+					</section>
+					<section>
+						<style>
+							.artomatic {
+								display: inline;
+								height: 300px;
+							}
+						</style>
+						<h2>The Art-O-Matic</h2>
+						<img class="artomatic" src="http://rasterweb.net/raster/wp-content/uploads/2012/04/arcomatic003m-500x349.jpg" alt="artomatic-1">
+						<img class="artomatic" src="http://rasterweb.net/raster/wp-content/uploads/2012/04/arcomatic002m-500x402.jpg" alt="artomatic-2">
+					</section>
+					<section>
+						<h2>A F**king LASER HARP!</h2>
+						<iframe class="youtube-vid" width="640" height="480" src="http://www.youtube.com/embed/sLVXmsbVwUs?rel=0" frameborder="0" allowfullscreen></iframe>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<style>
+							.how-to-use {
+								display: inline;
+								height: 220px;
+							}
+						</style>
+						<h2>How do you use one?</h2>
+						<img class="fragment how-to-use" src="http://cdn2.pcadvisor.co.uk/cmsdata/reviews/3341484/MacBook_air_11_550.jpg" alt="mac book">
+						<img class="fragment how-to-use" src="http://us.123rf.com/400wm/400/400/kirillm/kirillm1105/kirillm110500044/9624654-3d-person-holding-usb-cable-isolated-on-white-background.jpg">
+						<img class="fragment how-to-use" src="https://dlnmh9ip6v2uc.cloudfront.net/images/products/9/9/5/0/09950-01.jpg" alt="arduino uno">
+					</section>
+					<section>
+						<h2>How do you <em>actually</em> use one?</h2>
+						<h3 class="fragment">Three things:</h3>
+						<ol>
+							<li class="fragment">Arduino programming language</li>
+							<li class="fragment">Arduino board</li>
+							<li class="fragment">Breadboard (and components and wot not)</li>
+						</ol>
+					</section>
+					<section>
+						<h2>The Arduino Language & IDE</h2>
+						<ul>
+							<li class="fragment">Based on a language called wiring - open source and similar to C</li>
+							<li class="fragment">Compiled - taken care of by the IDE</li>
+							<li class="fragment">Integrated Development Environment</li>
+						</ul>
+					</section>
+					<section>
+						<h2>The IDE</h2>
+						<img class="" style="border:none;box-shadow:none;" src="http://kevinrye.net/files/arduino_ide_1.png" alt="IDE">
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>My First Cicuit</h2>
+						<img src="./img/first_circuit.jpg" alt="">
+					</section>
+					<section>
+						<h2>Things to note</h2>
+						<ul>
+							<li class="fragment">Arduino circuits generally use 5 volts</li>
+							<li class="fragment">LEDs have a polarity - it matters what way round they go</li>
+							<li class="fragment">Resistors don't have a polarity</li>
+							<li class="fragment">If you don't connect up a complete circuit, the current can't flow</li>
+							<li class="fragment">LEDs staying on are boring...</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>I/Os</h2>
+						<p>Inputs and outputs are what make the Arduino great. We can use code to change the <em>state</em> of pins on the Arduino. That way, when we hook up the pins of our Arduino to things in the physical world, we can programme objects.</p>
+						<h3 class="fragment"><em>Et voila,</em> Physical computing!</h3>
+					</section>
+					<section>
+						<h2>Setup your IDE</h2>
+						<p>There are a few steps to run through before you can be let loose with your Arduino. You should only have to do this if you're setting up your board for the first time</p>
+						<ol>
+							<li class="fragment">Download and install the latest and greatest IDE <a href="http://arduino.cc/en/Main/Software">here</a></li>
+							<li class="fragment">Let the IDE know what board you're using</li>
+							<li class="fragment">Tell the IDE how you'll be talking to the board <br/> <span style="font-size:80%">- in all likelyhood you'll want to select the <code>/dev/tty.usbmodem621</code> option from tools -> serial port</span></li>
+
+						</ol>
+					</section>
+					<section>
+						<h2>Blink & you'll miss it</h2>
+						<img src="./img/blink.jpg" alt="">
+					</section>
+					<section>
+						<h3>Coad of Coad Hall</h3>
+						<p>The Arduino expects you to use two functions</p>
+						<pre class="fragment"><code class="javascript" contenteditable>
+void setup() {
+    //this code runs once at the beginning
+}
+						</code></pre>
+						<pre class="fragment"><code class="javascript" contenteditable>
+void loop() {
+    //this code runs over and over continuously
+    //once setup() has finished
+}
+						</code></pre>
+					</section>
+					<section>
+						<h2>Ready... GO!</h2>
+						<p class="fragment">When you think you're ready, hit upload. This will compile your code into a form the board's microcontroller can understand and bung it on the chip for you.</p>
+						<p class="fragment">If it finds and error, it will point this out to you in the error console below the code editing window.</p>
+						<p class="fragment">Verify will compile and error check your code without uploading it to the board. <em>Where's the fun in that I ask?</em></p>
+					</section>
+					<section>
+						<h2>Blink</h2>
+						<pre><code class="javascript" contenteditable>
+int led = 13;
+
+void setup() {
+  pinMode(led, OUTPUT);
+}
+
+void loop() {
+  //set the pin of our led to be an output
+  digitalWrite(led, HIGH); //turn the LED on
+  delay(1000); //wait one second
+  digitalWrite(led, LOW); //turn the LED off
+  delay(1000); //wait one second
+}
+						</code></pre>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Inputs</h2>
+						<p>Inputs allow our Arduino to respond to changes in the physical world - inputs necessitate <em>logic</em> - our board must make <em>decisions!</em></p>
+					</section>
+					<section>
+						<h2>A simple latch</h2>
+						<p>The objective: to latch an LED on or off by pressing a single button</p>
+						<img src="./img/LED_latch.jpg" alt="LED Latch">
+					</section>
+					<section>
+						<h2>Decisions Decisions Decisions</h2>
+						<p>Computers can only answer the most basic of questions; Yes or No? As programmers, it's our job to phrase the questions so we get an answer we can use</p>
+						<p>In the case of the latch we have to ask the question: <em>Is the button pressed? If so, do I need to turn the LED on or off?</em></p>
+					</section>
+					<section>
+						<h2>If YES do this, else do that</h2>
+						<p>If the button is pressed and the LED is off then turn the LED on</p>
+						<pre><code class="javascript" contenteditable>
+							<!-- it isn't javascript but the C syntax highlighting failed -->
+//if the button is in a LOW state, that means it is being
+//pressed, such is the way we have wired our circuit
+
+if(digitalRead(button) == LOW && digitalRead(LED) == LOW) {
+	digitalWrite(LED, HIGH);
+	delay(200);
+}
+						</code></pre>
+					</section>
+					<section>
+						<h3>LED Latch</h3>
+						<pre><code class="javascript" contenteditable>
+/*
+* by Joshua Maxey
+* created 26/03/2013
+*
+* requirements:
+*  - 1 x LED (with suitable resistor)
+*  - 1 x button (push to make, non latching)
+*
+**************************************/
+
+int led = 13;
+int button = 11;
+
+void setup() {
+  pinMode(led, OUTPUT);
+  pinMode(button, INPUT_PULLUP);
+  Serial.begin(9600);
+  Serial.println("setup is complete");
+}
+
+void loop() {
+  if (digitalRead(button) == LOW && digitalRead(led) == LOW) {
+    digitalWrite(led, HIGH);
+    Serial.println("LED is on");
+    delay(200);
+  }
+  if (digitalRead(button) == LOW && digitalRead(led) == HIGH) {
+    digitalWrite(led, LOW);
+    Serial.println("LED is off");
+    delay(200);
+  }
+}
+						</code></pre>
+					</section>
+				</section>
+
+				<section>
+					<h2>Ideas to try</h2>
+					<h3>Multiple LEDs</h3>
+					<p>Illuminate a line of LEDs one at a time</p>
+					<h3>Using a buzzer</h3>
+					<p>How could you define a function to simplify the task of beeping?</p>
+				</section>
+
+				<section>
+					<h1>Fin</h1>
+					<h3><a href="http://jeshua.co">J. Maxey</a> | <a href="http://twitter.com/jeshuamaxey">@jeshuamaxey</a></h3>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+					// { src: 'plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; } }
+					// { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
