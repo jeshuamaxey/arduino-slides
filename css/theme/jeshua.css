@@ -96,6 +96,10 @@ body {
   border-color: rgba(30, 30, 30, 1);
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.55); }
 
+.two-inline {
+  display: inline;
+  height: 300px; }
+
 /*********************************************
  * NAVIGATION CONTROLS
  *********************************************/
