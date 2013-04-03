@@ -91,8 +91,8 @@
 						<p>Secondly, Arduino is a platform of which the Arduino board is just one piece. This platform includes free to use software, expansion boards (called shields), online guides and documentation and a thriving development community. Arduino is much more than a single object.</p>
 					</section>
 					<section>
-						<h2>Intended for Anyone Interested in Creating Interactive Objects</h2>
-						<p>Intended for anyone. ANYONE! Arduino is incredibly accessible. All you need to bring the the equation is your own laptop and you can start playing with almost immediately. You'll also find very quickly that Arduino can make physical objects intelligent and interactive.</p>
+						<h3>Intended for Anyone Interested in Creating Interactive Objects</h3>
+						<p>Intended for anyone. ANYONE! Arduino is incredibly accessible. All you need to bring the the equation is a computer and you can start playing  almost immediately. You'll also find very quickly that Arduino can make physical objects intelligent and interactive.</p>
 					</section>
 					<section>
 						<h2>Arduinos are...</h2>
@@ -133,33 +133,44 @@
 						<img class="two-inline" src="http://rasterweb.net/raster/wp-content/uploads/2012/04/arcomatic002m-500x402.jpg" alt="artomatic-2">
 					</section>
 					<section>
-						<h2>A F**king LASER HARP!</h2>
+						<h2>A LASER HARP!</h2>
 						<iframe class="youtube-vid" width="640" height="480" src="http://www.youtube.com/embed/sLVXmsbVwUs?rel=0" frameborder="0" allowfullscreen></iframe>
-						<p>A</p>
+						<p>A musical instrument crafted from light (and an Arduino!)</p>
 					</section>
 				</section>
 
 				<section>
 					<section>
-						<h2>How do you <em>actually</em> use one?</h2>
-						<h3 class="fragment">Three things:</h3>
+						<h2>How do you use an Arduino?</h2>
+						<h3>To get started you need three things:</h3>
 						<ol>
-							<li class="fragment">Arduino programming language</li>
-							<li class="fragment">Arduino board</li>
-							<li class="fragment">Breadboard (and components and wot not)</li>
+							<li>A basic knowledge of the Arduino programming language</li>
+							<li>An Arduino board &amp; the IDE - there are a few varieties of board but any will do</li>
+							<li>A breadboard (and some electrical components and wot nots)</li>
 						</ol>
 					</section>
 					<section>
-						<h2>The Arduino Language & IDE</h2>
-						<ul>
-							<li class="fragment">Based on a language called wiring - open source and similar to C</li>
-							<li class="fragment">Compiled - taken care of by the IDE</li>
-							<li class="fragment">Integrated Development Environment</li>
-						</ul>
+						<h2>The Arduino Language</h2>
+						<p>The Arduino programming language is based on a language called wiring. The syntax is very similar to C. It is an open source, compiled language</p>
+						<p>If none of that made any sense, don't panic. We'll be starting of with the very basics of the language.</p>
+					</section>
+					<section>
+						<h2>The Arduino Board</h2>
+						<p>The Arduino board compirises of three mains components:</p>
+						<ol>
+							<li>The usb port - this allows our computer to communicate with the board and load </li>
+							<li>The microprocessor - the barins of the outfit, this stores and executes our code</li>
+							<li>Pins - the black sockets dotted around the perimeter allow us to connect our board up to physical objects</li>
+						</ol>
 					</section>
 					<section>
 						<h2>The IDE</h2>
+						<p>The Integrated Development Environment (IDE) handles the mundane task of checking your code for errors and translating it into a format the board's microprocessor can understand. This step is know as compiling.</p>
 						<img class="" style="border:none;box-shadow:none;" src="http://kevinrye.net/files/arduino_ide_1.png" alt="IDE">
+					</section>
+					<section>
+						<h2>Breadboards</h2>
+						<p>Breadboards are great for quickly plugging up electronics circuits. They come in all shapes and sizes but follow the same general wiring pattern which is important to grasp to be able to build circuits on the fly.</p>
 					</section>
 				</section>
 				<section>
@@ -170,11 +181,11 @@
 					<section>
 						<h2>Things to note</h2>
 						<ul>
-							<li class="fragment">Arduino circuits generally use 5 volts</li>
-							<li class="fragment">LEDs have a polarity - it matters what way round they go</li>
-							<li class="fragment">Resistors don't have a polarity</li>
-							<li class="fragment">If you don't connect up a complete circuit, the current can't flow</li>
-							<li class="fragment">LEDs staying on are boring...</li>
+							<li>Arduino circuits generally use 5 volts</li>
+							<li>LEDs have a polarity - it matters what way round they go</li>
+							<li>Resistors don't have a polarity</li>
+							<li>If you don't connect up a complete circuit, the current can't flow</li>
+							<li>LEDs staying on are boring...</li>
 						</ul>
 					</section>
 				</section>
@@ -182,31 +193,31 @@
 					<section>
 						<h2>I/Os</h2>
 						<p>Inputs and outputs are what make the Arduino great. We can use code to change the <em>state</em> of pins on the Arduino. That way, when we hook up the pins of our Arduino to things in the physical world, we can programme objects.</p>
-						<h3 class="fragment"><em>Et voila,</em> Physical computing!</h3>
+						<h3><em>Et voila,</em> Physical computing!</h3>
 					</section>
 					<section>
 						<h2>Setup your IDE</h2>
 						<p>There are a few steps to run through before you can be let loose with your Arduino. You should only have to do this if you're setting up your board for the first time</p>
 						<ol>
-							<li class="fragment">Download and install the latest and greatest IDE <a href="http://arduino.cc/en/Main/Software">here</a></li>
-							<li class="fragment">Let the IDE know what board you're using</li>
-							<li class="fragment">Tell the IDE how you'll be talking to the board <br/> <span style="font-size:80%">- in all likelyhood you'll want to select the <code>/dev/tty.usbmodem621</code> option from tools -> serial port</span></li>
+							<li>Download and install the latest and greatest IDE <a href="http://arduino.cc/en/Main/Software">here</a></li>
+							<li>Let the IDE know what board you're using</li>
+							<li>Tell the IDE how you'll be talking to the board <br/> <span style="font-size:80%">- in all likelyhood you'll want to select the <code>/dev/tty.usbmodem621</code> option from tools -> serial port</span></li>
 
 						</ol>
 					</section>
 					<section>
-						<h2>Blink & you'll miss it</h2>
+						<h2>Blink &amp; you'll miss it</h2>
 						<img src="./img/blink.jpg" alt="">
 					</section>
 					<section>
 						<h3>Coad of Coad Hall</h3>
 						<p>The Arduino expects you to use two functions</p>
-						<pre class="fragment"><code class="javascript" contenteditable>
+						<pre><code class="javascript" contenteditable>
 void setup() {
     //this code runs once at the beginning
 }
 						</code></pre>
-						<pre class="fragment"><code class="javascript" contenteditable>
+						<pre><code class="javascript" contenteditable>
 void loop() {
     //this code runs over and over continuously
     //once setup() has finished
@@ -215,9 +226,9 @@ void loop() {
 					</section>
 					<section>
 						<h2>Ready... GO!</h2>
-						<p class="fragment">When you think you're ready, hit upload. This will compile your code into a form the board's microcontroller can understand and bung it on the chip for you.</p>
-						<p class="fragment">If it finds and error, it will point this out to you in the error console below the code editing window.</p>
-						<p class="fragment">Verify will compile and error check your code without uploading it to the board. <em>Where's the fun in that I ask?</em></p>
+						<p>When you think you're ready, hit upload. This will compile your code into a form the board's microcontroller can understand and bung it on the chip for you.</p>
+						<p>If it finds and error, it will point this out to you in the error console below the code editing window.</p>
+						<p>Verify will compile and error check your code without uploading it to the board. <em>Where's the fun in that I ask?</em></p>
 					</section>
 					<section>
 						<h2>Blink</h2>
